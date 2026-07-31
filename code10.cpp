@@ -7,6 +7,8 @@ int main() {
     cout << "Enter first number: ";
     cin >> a;
 
+
+    
     cout << "Enter second number: ";
     cin >> b;
 
