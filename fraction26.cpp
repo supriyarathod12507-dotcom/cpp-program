@@ -3,24 +3,30 @@ using namespace std;
 
 class Fraction
 {
-    int n, d;
+    int num, den;
 
 public:
-    void input()
+    void getData()
     {
-        cin >> n >> d;
+        cout << "Enter numerator: ";
+        cin >> num;
+
+        cout << "Enter denominator: ";
+        cin >> den;
     }
 
-    void addition(Fraction f)
+    void add(Fraction f)
     {
         cout << "Addition = "
-             << (n * f.d + f.n * d) << "/" << (d * f.d) << endl;
+             << num * f.den + f.num * den
+             << "/" << den * f.den << endl;
     }
 
-    void subtraction(Fraction f)
+    void subtract(Fraction f)
     {
         cout << "Subtraction = "
-             << (n * f.d - f.n * d) << "/" << (d * f.d);
+             << num * f.den - f.num * den
+             << "/" << den * f.den << endl;
     }
 };
 
@@ -28,14 +34,14 @@ int main()
 {
     Fraction f1, f2;
 
-    cout << "Enter first fraction: ";
-    f1.input();
+    cout << "Enter first fraction:\n";
+    f1.getData();
 
-    cout << "Enter second fraction: ";
-    f2.input();
+    cout << "Enter second fraction:\n";
+    f2.getData();
 
-    f1.addition(f2);
-    f1.subtraction(f2);
+    f1.add(f2);
+    f1.subtract(f2);
 
     return 0;
 }
