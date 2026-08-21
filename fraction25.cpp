@@ -1,55 +1,24 @@
 #include <iostream>
 using namespace std;
 
-class Fraction
-{
-private:
-    int numerator, denominator;
-
-public:
-    Fraction(int n = 0, int d = 1)
-        : numerator(n), denominator(d) {}
-
-    Fraction add(const Fraction &f)
-    {
-        return Fraction(
-            numerator * f.denominator + f.numerator * denominator,
-            denominator * f.denominator
-        );
-    }
-
-    Fraction subtract(const Fraction &f)
-    {
-        return Fraction(
-            numerator * f.denominator - f.numerator * denominator,
-            denominator * f.denominator
-        );
-    }
-
-    void display() const
-    {
-        cout << numerator << "/" << denominator << endl;
-    }
-};
-
 int main()
 {
-    Fraction f1(1, 2), f2(3, 4);
+    int n1, d1, n2, d2;
+    int add, sub, d;
 
-    Fraction sum = f1.add(f2);
-    Fraction diff = f1.subtract(f2);
+    cout << "Enter first fraction: ";
+    cin >> n1 >> d1;
 
-    cout << "First Fraction: ";
-    f1.display();
+    cout << "Enter second fraction: ";
+    cin >> n2 >> d2;
 
-    cout << "Second Fraction: ";
-    f2.display();
+    d = d1 * d2;
 
-    cout << "Addition: ";
-    sum.display();
+    add = (n1 * d2) + (n2 * d1);
+    sub = (n1 * d2) - (n2 * d1);
 
-    cout << "Subtraction: ";
-    diff.display();
+    cout << "Addition = " << add << "/" << d << endl;
+    cout << "Subtraction = " << sub << "/" << d;
 
     return 0;
 }
